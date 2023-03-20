@@ -6,13 +6,14 @@ using UnityEngine;
 Script for each balloon image store item.
 Saves unlocked state
 */
-public class BalloonStoreItem : MonoBehaviour
+public class StoreItem : MonoBehaviour
 {
     [SerializeField] Sprite itemImage;
     [SerializeField] string title;
     [SerializeField] bool unlocked;
     [SerializeField] DisplayStoreItem displayStoreItem;
     [SerializeField] int cost;
+    [SerializeField] string type;
 
     [SerializeField] GameObject lockedImage;
 
@@ -24,7 +25,7 @@ public class BalloonStoreItem : MonoBehaviour
 
     public void OnClick()
     {
-        displayStoreItem.ShowBalloonItem(itemImage, title, unlocked, this, cost);
+        displayStoreItem.ShowItem(itemImage, title, unlocked, this, cost, type);
     }
 
     public void Unlock()

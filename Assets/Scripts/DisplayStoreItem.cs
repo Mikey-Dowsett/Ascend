@@ -18,10 +18,15 @@ public class DisplayStoreItem : MonoBehaviour
     [SerializeField] IconManager iconManager;
     [SerializeField] TMP_SpriteAsset coinAsset;
 
-    BalloonStoreItem balloonStoreItem;
+    [SerializeField] GameObject[] storeMenus;
+    [SerializeField] StoreItem[] defaultItems;
+
+    StoreItem storeItem;
+    string type = "";
+    int curStoreMenu = 0;
 
     //Shows the balloon item onto the display
-    public void ShowBalloonItem(Sprite _itemImage, string _title, bool unlocked, BalloonStoreItem bsi, int price)
+    public void ShowItem(Sprite _itemImage, string _title, bool unlocked, StoreItem si, int price, string _itemType)
     {
         itemImage.sprite = _itemImage;
         title.text = _title;
@@ -35,22 +40,42 @@ public class DisplayStoreItem : MonoBehaviour
             selectButton.interactable = false;
             unlockButton.interactable = true;
         }
-        balloonStoreItem = bsi;
+        storeItem = si;
+        type = _itemType;
 
         string[] temp = unlockCost.text.Split(' ');
         unlockCost.text = $"{temp[0]} {temp[1]} {temp[2]} {price}";
     }
 
     //Sets the selected balloon to be the new icon.
-    public void SelectBalloonItem()
+    public void SelectItem()
     {
-        iconManager.SetBalloon(itemImage.sprite);
+        switch (type)
+        {
+            case "1": iconManager.SetBalloon(itemImage.sprite); break;
+            case "2": iconManager.SetBackground(itemImage.sprite); break;
+        }
+
     }
 
     public void UnlockItem()
     {
-        balloonStoreItem.Unlock();
+        storeItem.Unlock();
         selectButton.interactable = true;
         unlockButton.interactable = false;
+    }
+
+    public void NextStoreMenu(int dir)
+    {
+        storeMenus[curStoreMenu].SetActive(false);
+        curStoreMenu += dir;
+
+        if (curStoreMenu >= storeMenus.Length)
+            curStoreMenu = 0;
+        else if (curStoreMenu <= -1)
+            curStoreMenu = storeMenus.Length - 1;
+
+        storeMenus[curStoreMenu].SetActive(true);
+        defaultItems[curStoreMenu].OnClick();
     }
 }
