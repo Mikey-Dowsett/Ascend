@@ -12,6 +12,14 @@ public class StartGame : MonoBehaviour
     [SerializeField] GameObject gameUI;
     [SerializeField] GameObject storeUI;
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            PlayerPrefs.DeleteAll();
+        }
+    }
+
     public void BeginGame()
     {
         menuUI.SetActive(false);

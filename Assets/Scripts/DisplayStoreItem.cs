@@ -9,6 +9,7 @@ Displays the selected item onto the screen in the store
 */
 public class DisplayStoreItem : MonoBehaviour
 {
+    [SerializeField] Score scoreObj;
     [SerializeField] Image itemImage;
     [SerializeField] TMP_Text title;
     [SerializeField] Button selectButton;
@@ -23,13 +24,15 @@ public class DisplayStoreItem : MonoBehaviour
 
     StoreItem storeItem;
     string type = "";
-    int curStoreMenu = 0;
+    int curStoreMenu;
+    int price;
 
     //Shows the balloon item onto the display
-    public void ShowItem(Sprite _itemImage, string _title, bool unlocked, StoreItem si, int price, string _itemType)
+    public void ShowItem(Sprite _itemImage, string _title, bool unlocked, StoreItem si, int _price, string _itemType)
     {
         itemImage.sprite = _itemImage;
         title.text = _title;
+        price = _price;
         if (unlocked)
         {
             selectButton.interactable = true;
@@ -44,7 +47,7 @@ public class DisplayStoreItem : MonoBehaviour
         type = _itemType;
 
         string[] temp = unlockCost.text.Split(' ');
-        unlockCost.text = $"{temp[0]} {temp[1]} {temp[2]} {price}";
+        unlockCost.text = $"{temp[0]} {temp[1]} {price}";
     }
 
     //Sets the selected balloon to be the new icon.
@@ -60,9 +63,13 @@ public class DisplayStoreItem : MonoBehaviour
 
     public void UnlockItem()
     {
-        storeItem.Unlock();
-        selectButton.interactable = true;
-        unlockButton.interactable = false;
+        if (scoreObj.SpendCoin(price))
+        {
+            storeItem.Unlock();
+            selectButton.interactable = true;
+            unlockButton.interactable = false;
+        }
+
     }
 
     public void NextStoreMenu(int dir)

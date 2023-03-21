@@ -8,6 +8,8 @@ Saves unlocked state
 */
 public class StoreItem : MonoBehaviour
 {
+    const string UNLOCKSTRING = "LockedState";
+
     [SerializeField] Sprite itemImage;
     [SerializeField] string title;
     [SerializeField] bool unlocked;
@@ -20,6 +22,14 @@ public class StoreItem : MonoBehaviour
     //Save if it's unlocked or not
     void Start()
     {
+        if (PlayerPrefs.GetInt(title + UNLOCKSTRING) == 1 || unlocked)
+        {
+            unlocked = true;
+        }
+        else
+        {
+            unlocked = false;
+        }
         lockedImage.SetActive(!unlocked ? true : false);
     }
 
@@ -32,5 +42,7 @@ public class StoreItem : MonoBehaviour
     {
         unlocked = true;
         lockedImage.SetActive(false);
+        PlayerPrefs.SetInt(title + UNLOCKSTRING, 1);
+        PlayerPrefs.Save();
     }
 }

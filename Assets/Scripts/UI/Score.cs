@@ -11,6 +11,7 @@ public class Score : MonoBehaviour
     [SerializeField] TMP_Text gameScoreText;
     [SerializeField] TMP_Text highScoreText;
     [SerializeField] TMP_Text gameCoinsText;
+    [SerializeField] TMP_Text storeCoinsText;
 
     int highscore;
     int score;
@@ -24,6 +25,7 @@ public class Score : MonoBehaviour
 
         coins = PlayerPrefs.GetInt("Coins");
         gameCoinsText.text = coins.ToString();
+        storeCoinsText.text = coins.ToString();
 
         playerTransfrom = GameObject.Find("Balloon").transform;
     }
@@ -46,5 +48,18 @@ public class Score : MonoBehaviour
         ++coins;
         gameCoinsText.text = coins.ToString();
         PlayerPrefs.SetInt("Coins", coins);
+    }
+
+    public bool SpendCoin(int cost)
+    {
+        if (coins >= cost)
+        {
+            coins -= cost;
+            gameCoinsText.text = coins.ToString();
+            storeCoinsText.text = coins.ToString();
+            PlayerPrefs.SetInt("Coins", coins);
+            return true;
+        }
+        else return false;
     }
 }
