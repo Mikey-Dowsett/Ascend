@@ -16,6 +16,7 @@ public class Obstacle : MonoBehaviour
         rb.gravityScale = 0.5f;
         if (col.collider.CompareTag("Player"))
         {
+            Handheld.Vibrate();
             whiteMask.SetActive(true);
             audioSource.pitch = 1 + Random.Range(-0.2f, 0.2f);
             audioSource.Play();
@@ -27,6 +28,7 @@ public class Obstacle : MonoBehaviour
         rb.gravityScale = 0.5f;
         if (col.CompareTag("Player"))
         {
+            Handheld.Vibrate();
             whiteMask.SetActive(true);
             audioSource.pitch = 1 + Random.Range(-0.2f, 0.2f);
             audioSource.Play();

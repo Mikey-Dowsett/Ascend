@@ -45,7 +45,7 @@ public class Score : MonoBehaviour
 
     public void AddCoin()
     {
-        ++coins;
+        coins += 10;
         gameCoinsText.text = coins.ToString();
         PlayerPrefs.SetInt("Coins", coins);
     }

@@ -11,6 +11,7 @@ public class StartGame : MonoBehaviour
     [SerializeField] GameObject menuUI;
     [SerializeField] GameObject gameUI;
     [SerializeField] GameObject storeUI;
+    [SerializeField] GameObject settingsUI;
 
     public void Update()
     {
@@ -37,5 +38,12 @@ public class StartGame : MonoBehaviour
     {
         menuUI.SetActive(true);
         storeUI.SetActive(false);
+        settingsUI.SetActive(false);
+    }
+
+    public void OpenSettings()
+    {
+        menuUI.SetActive(false);
+        settingsUI.SetActive(true);
     }
 }

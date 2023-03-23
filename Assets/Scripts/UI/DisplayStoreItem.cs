@@ -17,10 +17,12 @@ public class DisplayStoreItem : MonoBehaviour
     [SerializeField] TMP_Text unlockCost;
 
     [SerializeField] IconManager iconManager;
-    [SerializeField] TMP_SpriteAsset coinAsset;
 
     [SerializeField] GameObject[] storeMenus;
     [SerializeField] StoreItem[] defaultItems;
+
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip[] goodBadAudio;
 
     StoreItem storeItem;
     string type = "";
@@ -68,6 +70,13 @@ public class DisplayStoreItem : MonoBehaviour
             storeItem.Unlock();
             selectButton.interactable = true;
             unlockButton.interactable = false;
+            audioSource.clip = goodBadAudio[0];
+            audioSource.Play();
+        }
+        else
+        {
+            audioSource.clip = goodBadAudio[1];
+            audioSource.Play();
         }
 
     }
