@@ -21,7 +21,11 @@ public class Settings : MonoBehaviour
     {
         sound = !sound;
         soundImg.sprite = sound ? soundON : soundOFF;
-        GameObject.FindObjectOfType<AudioListener>().enabled = sound;
+        foreach (AudioSource audioS in GameObject.FindObjectsOfType<AudioSource>())
+        {
+            if (audioS.CompareTag("Sound")) audioS.enabled = sound;
+            if (audioS.CompareTag("Enemy")) audioS.enabled = sound;
+        }
     }
 
     public void ToggleMusic()

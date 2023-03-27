@@ -18,9 +18,9 @@ public class Coin : MonoBehaviour
             //Plays random coin sound
             audioSource.clip = coinSounds[Random.Range(0, coinSounds.Length - 1)];
             audioSource.pitch = 1 + Random.Range(-0.1f, 0.1f);
-            audioSource.Play();
+            if (audioSource.enabled) audioSource.Play();
 
-            partSystem.Play();
+            if (audioSource.enabled) partSystem.Play();
             GameObject.FindObjectOfType<Score>().AddCoin();
             StartCoroutine("DeathCounter");
         }

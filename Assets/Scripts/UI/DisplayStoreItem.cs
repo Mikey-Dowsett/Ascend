@@ -71,12 +71,12 @@ public class DisplayStoreItem : MonoBehaviour
             selectButton.interactable = true;
             unlockButton.interactable = false;
             audioSource.clip = goodBadAudio[0];
-            audioSource.Play();
+            if (audioSource.enabled) audioSource.Play();
         }
         else
         {
             audioSource.clip = goodBadAudio[1];
-            audioSource.Play();
+            if (audioSource.enabled) audioSource.Play();
         }
 
     }

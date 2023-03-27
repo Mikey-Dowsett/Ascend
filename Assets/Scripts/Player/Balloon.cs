@@ -25,7 +25,7 @@ public class Balloon : MonoBehaviour
         }
         else
         {
-            newBGPos = new Vector3(Random.Range(-0.75f, 0.75f), Random.Range(-1.5f, 1.5f), 10);// + backgroundPos.localPosition;
+            newBGPos = new Vector3(Random.Range(-0.2f, 0.2f), Random.Range(-1f, 1f), 10);// + backgroundPos.localPosition;
         }
     }
 

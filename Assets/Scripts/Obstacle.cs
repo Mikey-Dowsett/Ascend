@@ -19,7 +19,7 @@ public class Obstacle : MonoBehaviour
             Handheld.Vibrate();
             whiteMask.SetActive(true);
             audioSource.pitch = 1 + Random.Range(-0.2f, 0.2f);
-            audioSource.Play();
+            if (audioSource.enabled) audioSource.Play();
         }
     }
 
@@ -31,7 +31,7 @@ public class Obstacle : MonoBehaviour
             Handheld.Vibrate();
             whiteMask.SetActive(true);
             audioSource.pitch = 1 + Random.Range(-0.2f, 0.2f);
-            audioSource.Play();
+            if (audioSource.enabled) audioSource.Play();
         }
     }
 
