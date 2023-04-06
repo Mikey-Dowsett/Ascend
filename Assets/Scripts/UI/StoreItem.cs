@@ -16,6 +16,8 @@ public class StoreItem : MonoBehaviour
     [SerializeField] DisplayStoreItem displayStoreItem;
     [SerializeField] int cost;
     [SerializeField] string type;
+    [SerializeField] Color color = Color.white;
+    [SerializeField] Material trailMat = null;
 
     [SerializeField] GameObject lockedImage;
 
@@ -32,12 +34,12 @@ public class StoreItem : MonoBehaviour
         }
         lockedImage.SetActive(!unlocked ? true : false);
     }
-
+    //Displays the item in the store menu.
     public void OnClick()
     {
-        displayStoreItem.ShowItem(itemImage, title, unlocked, this, cost, type);
+        displayStoreItem.ShowItem(itemImage, color, trailMat, title, unlocked, this, cost, type);
     }
-
+    //Permantly unlocks the item.
     public void Unlock()
     {
         unlocked = true;

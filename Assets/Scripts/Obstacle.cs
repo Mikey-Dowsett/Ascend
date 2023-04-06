@@ -11,12 +11,16 @@ public class Obstacle : MonoBehaviour
     [SerializeField] GameObject whiteMask;
     [SerializeField] AudioSource audioSource;
 
+    void Start()
+    {
+        GetComponent<SpriteRenderer>().color = GameObject.FindObjectOfType<IconManager>().color;
+    }
+
     void OnCollisionEnter2D(Collision2D col)
     {
         rb.gravityScale = 0.5f;
         if (col.collider.CompareTag("Player"))
         {
-            Handheld.Vibrate();
             whiteMask.SetActive(true);
             audioSource.pitch = 1 + Random.Range(-0.2f, 0.2f);
             if (audioSource.enabled) audioSource.Play();
@@ -28,7 +32,6 @@ public class Obstacle : MonoBehaviour
         rb.gravityScale = 0.5f;
         if (col.CompareTag("Player"))
         {
-            Handheld.Vibrate();
             whiteMask.SetActive(true);
             audioSource.pitch = 1 + Random.Range(-0.2f, 0.2f);
             if (audioSource.enabled) audioSource.Play();

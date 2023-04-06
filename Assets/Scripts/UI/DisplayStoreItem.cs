@@ -29,10 +29,17 @@ public class DisplayStoreItem : MonoBehaviour
     int curStoreMenu;
     int price;
 
+    private void Start()
+    {
+        defaultItems[0].OnClick();
+    }
+
     //Shows the balloon item onto the display
-    public void ShowItem(Sprite _itemImage, string _title, bool unlocked, StoreItem si, int _price, string _itemType)
+    public void ShowItem(Sprite _itemImage, Color32 color, Material trailMat, string _title, bool unlocked, StoreItem si, int _price, string _itemType)
     {
         itemImage.sprite = _itemImage;
+        itemImage.color = color;
+        itemImage.material = trailMat;
         title.text = _title;
         price = _price;
         if (unlocked)
@@ -59,10 +66,13 @@ public class DisplayStoreItem : MonoBehaviour
         {
             case "1": iconManager.SetBalloon(itemImage.sprite); break;
             case "2": iconManager.SetBackground(itemImage.sprite); break;
+            case "3": iconManager.SetObstacle(itemImage.color); break;
+            case "4": iconManager.SetTrail(itemImage.material); break;
+            case "5": iconManager.SetDefender(itemImage.sprite); break;
         }
 
     }
-
+    //Unlocks the selected item.
     public void UnlockItem()
     {
         if (scoreObj.SpendCoin(price))
@@ -80,7 +90,7 @@ public class DisplayStoreItem : MonoBehaviour
         }
 
     }
-
+    //Scrolls through the store menus.
     public void NextStoreMenu(int dir)
     {
         storeMenus[curStoreMenu].SetActive(false);

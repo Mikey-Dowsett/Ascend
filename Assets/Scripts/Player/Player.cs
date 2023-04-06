@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
         //Set defenders position.
         if (start)
         {
-            transform.position = cam.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);
+            transform.position = cam.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0.75f, 10);
             balloonPosition.position = new Vector3(0, balloonPosition.position.y + balloonSpeed * Time.deltaTime, 0);
         }
 
@@ -33,5 +33,11 @@ public class Player : MonoBehaviour
     {
         start = true;
         balloonSpeed = 1;
+    }
+
+    public void EndGame()
+    {
+        start = false;
+        balloonSpeed = 0;
     }
 }

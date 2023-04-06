@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
 Controls the menus.
@@ -12,6 +13,7 @@ public class StartGame : MonoBehaviour
     [SerializeField] GameObject gameUI;
     [SerializeField] GameObject storeUI;
     [SerializeField] GameObject settingsUI;
+    [SerializeField] GameObject deathUI;
 
     public void Update()
     {
@@ -45,5 +47,15 @@ public class StartGame : MonoBehaviour
     {
         menuUI.SetActive(false);
         settingsUI.SetActive(true);
+    }
+
+    public void DeathScreen()
+    {
+        deathUI.SetActive(true);
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(0);
     }
 }

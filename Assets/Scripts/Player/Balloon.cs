@@ -10,6 +10,8 @@ public class Balloon : MonoBehaviour
 {
     [SerializeField] Transform backgroundPos;
     [SerializeField] float bgSpeed;
+    [SerializeField] ParticleSystem popParticle;
+    [SerializeField] SpriteRenderer balloonSprite;
     Vector3 newBGPos;
 
     void Start()
@@ -33,7 +35,13 @@ public class Balloon : MonoBehaviour
     {
         if (col.collider.CompareTag("Enemy"))
         {
-            SceneManager.LoadScene(0);
+            Handheld.Vibrate();
+            FindObjectOfType<StartGame>().DeathScreen();
+            FindObjectOfType<Player>().EndGame();
+
+            GetComponent<CircleCollider2D>().enabled = false;
+            balloonSprite.color = new Color(255, 255, 255, 0);
+            popParticle.Play();
         }
     }
 }
