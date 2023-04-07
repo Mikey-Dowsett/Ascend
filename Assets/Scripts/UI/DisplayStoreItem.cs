@@ -19,7 +19,11 @@ public class DisplayStoreItem : MonoBehaviour
     [SerializeField] IconManager iconManager;
 
     [SerializeField] GameObject[] storeMenus;
+    [SerializeField] Image[] storeButtons;
     [SerializeField] StoreItem[] defaultItems;
+
+    [SerializeField] Color selectedButtonColor;
+    [SerializeField] Color unselectedButtonColor;
 
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip[] goodBadAudio;
@@ -90,18 +94,21 @@ public class DisplayStoreItem : MonoBehaviour
         }
 
     }
-    //Scrolls through the store menus.
-    public void NextStoreMenu(int dir)
+
+    private void ResetMenus()
     {
-        storeMenus[curStoreMenu].SetActive(false);
-        curStoreMenu += dir;
-
-        if (curStoreMenu >= storeMenus.Length)
-            curStoreMenu = 0;
-        else if (curStoreMenu <= -1)
-            curStoreMenu = storeMenus.Length - 1;
-
-        storeMenus[curStoreMenu].SetActive(true);
-        defaultItems[curStoreMenu].OnClick();
+        for (int i = 0; i < storeMenus.Length; i++)
+        {
+            storeMenus[i].SetActive(false);
+            storeButtons[i].color = unselectedButtonColor;
+        }
+    }
+    //Scrolls through the store menus.
+    public void SelectStoreMenu(int menuNum)
+    {
+        ResetMenus();
+        storeMenus[menuNum].SetActive(true);
+        storeButtons[menuNum].color = selectedButtonColor;
+        defaultItems[menuNum].OnClick();
     }
 }

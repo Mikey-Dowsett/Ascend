@@ -38,7 +38,7 @@ public class Score : MonoBehaviour
         gameScoreText.text = score.ToString();
 
         if (score > highscore) highscore = score;
-        highScoreText.text = $"Highscore\n{highscore}";
+        highScoreText.text = $"{score}/{highscore}";
 
         PlayerPrefs.SetInt("Highscore", highscore);
     }

@@ -8,6 +8,8 @@ TagManager:
   - Coin
   - Balloon
   - Sound
+  - FxTemporaire
+  - Music
   layers:
   - Default
   - TransparentFX
