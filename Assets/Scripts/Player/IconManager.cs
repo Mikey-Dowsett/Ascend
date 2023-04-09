@@ -68,6 +68,11 @@ public class IconManager : MonoBehaviour
     {
         color = newColor;
         PlayerPrefs.SetString(OBSTACLE, color.ToString());
+        GameObject[] gb = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject sr in gb)
+        {
+            sr.GetComponent<SpriteRenderer>().color = newColor;
+        }
     }
 
     public void SetTrail(Material mat)

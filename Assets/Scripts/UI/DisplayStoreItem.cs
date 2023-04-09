@@ -9,6 +9,12 @@ Displays the selected item onto the screen in the store
 */
 public class DisplayStoreItem : MonoBehaviour
 {
+    const string DEFAULTBALLOON = "DefaultBalloon",
+                 DEFAULTDEFENDER = "DefaultDefender",
+                 DEFAULTBACKGROUND = "DefaultBackground",
+                 DEFAULTOBSTACLE = "DefaultObstacle",
+                 DEFAULTTRAIL = "DefaultTrail";
+
     [SerializeField] Score scoreObj;
     [SerializeField] Image itemImage;
     [SerializeField] TMP_Text title;
@@ -29,13 +35,33 @@ public class DisplayStoreItem : MonoBehaviour
     [SerializeField] AudioClip[] goodBadAudio;
 
     StoreItem storeItem;
+    StoreItem oldStoreItem;
     string type = "";
     int curStoreMenu;
     int price;
 
     private void Start()
     {
-        defaultItems[0].OnClick();
+        BlipMenus(true);
+        if (PlayerPrefs.HasKey(DEFAULTBALLOON))
+            defaultItems[0] = GameObject.Find(PlayerPrefs.GetString(DEFAULTBALLOON)).GetComponent<StoreItem>();
+        if (PlayerPrefs.HasKey(DEFAULTDEFENDER))
+            defaultItems[1] = GameObject.Find(PlayerPrefs.GetString(DEFAULTDEFENDER)).GetComponent<StoreItem>();
+        if (PlayerPrefs.HasKey(DEFAULTBACKGROUND))
+            defaultItems[2] = GameObject.Find(PlayerPrefs.GetString(DEFAULTBACKGROUND)).GetComponent<StoreItem>();
+        if (PlayerPrefs.GetString(DEFAULTOBSTACLE).Length > 2)
+            defaultItems[3] = GameObject.Find(PlayerPrefs.GetString(DEFAULTOBSTACLE)).GetComponent<StoreItem>();
+        if (PlayerPrefs.HasKey(DEFAULTTRAIL))
+            defaultItems[4] = GameObject.Find(PlayerPrefs.GetString(DEFAULTTRAIL)).GetComponent<StoreItem>();
+        BlipMenus(false);
+        foreach (StoreItem item in defaultItems)
+        {
+            item.ChangeFrame(0);
+        }
+
+        storeMenus[0].SetActive(true);
+        oldStoreItem = storeItem = defaultItems[0];
+        storeItem.OnClick();
     }
 
     //Shows the balloon item onto the display
@@ -59,22 +85,39 @@ public class DisplayStoreItem : MonoBehaviour
         storeItem = si;
         type = _itemType;
 
-        string[] temp = unlockCost.text.Split(' ');
-        unlockCost.text = $"{temp[0]} {temp[1]} {price}";
+        unlockCost.text = !unlocked ? $"<sprite index=0>{price}" : "Unlocked";
     }
 
     //Sets the selected balloon to be the new icon.
     public void SelectItem()
     {
+        storeItem.ChangeFrame(0);
+        if (oldStoreItem) oldStoreItem.ChangeFrame(1);
+        oldStoreItem = storeItem;
         switch (type)
         {
-            case "1": iconManager.SetBalloon(itemImage.sprite); break;
-            case "2": iconManager.SetBackground(itemImage.sprite); break;
-            case "3": iconManager.SetObstacle(itemImage.color); break;
-            case "4": iconManager.SetTrail(itemImage.material); break;
-            case "5": iconManager.SetDefender(itemImage.sprite); break;
+            case "1": //Ballon
+                iconManager.SetBalloon(itemImage.sprite);
+                PlayerPrefs.SetString(DEFAULTBALLOON, title.text);
+                break;
+            case "2": //Background
+                iconManager.SetBackground(itemImage.sprite);
+                PlayerPrefs.SetString(DEFAULTBACKGROUND, title.text);
+                break;
+            case "3": //Obstacle
+                iconManager.SetObstacle(itemImage.color);
+                PlayerPrefs.SetString(DEFAULTOBSTACLE, title.text);
+                break;
+            case "4": //Trail
+                iconManager.SetTrail(itemImage.material);
+                PlayerPrefs.SetString(DEFAULTTRAIL, title.text);
+                break;
+            case "5": //Defender
+                iconManager.SetDefender(itemImage.sprite);
+                PlayerPrefs.SetString(DEFAULTDEFENDER, title.text);
+                break;
         }
-
+        PlayerPrefs.Save();
     }
     //Unlocks the selected item.
     public void UnlockItem()
@@ -103,6 +146,7 @@ public class DisplayStoreItem : MonoBehaviour
             storeButtons[i].color = unselectedButtonColor;
         }
     }
+
     //Scrolls through the store menus.
     public void SelectStoreMenu(int menuNum)
     {
@@ -110,5 +154,14 @@ public class DisplayStoreItem : MonoBehaviour
         storeMenus[menuNum].SetActive(true);
         storeButtons[menuNum].color = selectedButtonColor;
         defaultItems[menuNum].OnClick();
+        oldStoreItem = defaultItems[menuNum];
+    }
+
+    private void BlipMenus(bool status)
+    {
+        foreach (GameObject menu in storeMenus)
+        {
+            menu.SetActive(status);
+        }
     }
 }

@@ -38,6 +38,7 @@ public class StartGame : MonoBehaviour
 
     public void CloseStore()
     {
+        if (FindObjectOfType<DisplayStoreItem>()) FindObjectOfType<DisplayStoreItem>().SelectStoreMenu(0);
         menuUI.SetActive(true);
         storeUI.SetActive(false);
         settingsUI.SetActive(false);

@@ -35,7 +35,7 @@ public class Balloon : MonoBehaviour
     {
         if (col.collider.CompareTag("Enemy"))
         {
-            Handheld.Vibrate();
+            if (PlayerPrefs.GetString("HAPTIC") == "True") Handheld.Vibrate();
             FindObjectOfType<StartGame>().DeathScreen();
             FindObjectOfType<Player>().EndGame();
 

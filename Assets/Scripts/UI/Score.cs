@@ -37,10 +37,12 @@ public class Score : MonoBehaviour
         score = ((int)(playerTransfrom.position.y / 2));
         gameScoreText.text = score.ToString();
 
-        if (score > highscore) highscore = score;
+        if (score > highscore)
+        {
+            highscore = score;
+            PlayerPrefs.SetInt("Highscore", highscore);
+        }
         highScoreText.text = $"{score}/{highscore}";
-
-        PlayerPrefs.SetInt("Highscore", highscore);
     }
 
     public void AddCoin()

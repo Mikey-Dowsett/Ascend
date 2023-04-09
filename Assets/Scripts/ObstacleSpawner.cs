@@ -24,7 +24,7 @@ public class ObstacleSpawner : MonoBehaviour
     void Update()
     {
         //Spawns the next obstacle every 4 units
-        if (oldSpawnHeight - transform.position.y <= -6)
+        if (oldSpawnHeight - transform.position.y <= -5)
         {
             coinSpawned = false;
             oldSpawnHeight = transform.position.y;
@@ -32,7 +32,7 @@ public class ObstacleSpawner : MonoBehaviour
                 transform.position, Quaternion.identity);
             oldPresets.Add(newPreset);
         }//Spawns a coin or random power up between the obstacles.
-        else if (oldSpawnHeight - transform.position.y <= -3.5f && !coinSpawned)
+        else if (oldSpawnHeight - transform.position.y <= -3f && !coinSpawned)
         {
             coinSpawned = true;
             Instantiate(coin, transform.position, Quaternion.identity);

@@ -13,7 +13,7 @@ public class Coin : MonoBehaviour
     //Checks for when the coin hits the balloon
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Balloon"))
+        if (col.CompareTag("Balloon") || col.CompareTag("Player"))
         {
             //Plays random coin sound
             audioSource.clip = coinSounds[Random.Range(0, coinSounds.Length - 1)];
@@ -22,6 +22,7 @@ public class Coin : MonoBehaviour
 
             if (audioSource.enabled) partSystem.Play();
             GameObject.FindObjectOfType<Score>().AddCoin();
+            GetComponent<CircleCollider2D>().enabled = false;
             StartCoroutine("DeathCounter");
         }
     }

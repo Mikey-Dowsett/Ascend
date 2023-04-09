@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /*
 Script for each balloon image store item.
@@ -20,6 +21,7 @@ public class StoreItem : MonoBehaviour
     [SerializeField] Material trailMat = null;
 
     [SerializeField] GameObject lockedImage;
+    [SerializeField] Sprite[] frames;
 
     //Save if it's unlocked or not
     void Start()
@@ -46,5 +48,10 @@ public class StoreItem : MonoBehaviour
         lockedImage.SetActive(false);
         PlayerPrefs.SetInt(title + UNLOCKSTRING, 1);
         PlayerPrefs.Save();
+    }
+
+    public void ChangeFrame(int frameNum)
+    {
+        GetComponent<Image>().sprite = frames[frameNum];
     }
 }
