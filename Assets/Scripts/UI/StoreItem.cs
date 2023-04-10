@@ -24,7 +24,7 @@ public class StoreItem : MonoBehaviour
     [SerializeField] Sprite[] frames;
 
     //Save if it's unlocked or not
-    void Start()
+    void Awake()
     {
         if (PlayerPrefs.GetInt(title + UNLOCKSTRING) == 1 || unlocked)
         {

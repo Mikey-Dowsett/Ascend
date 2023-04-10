@@ -10,6 +10,11 @@ public class Coin : MonoBehaviour
 
     [SerializeField] AudioClip[] coinSounds;
 
+    void Start(){
+        if(FindObjectOfType<Settings>().sound == false)
+            audioSource.enabled = false;
+    }
+
     //Checks for when the coin hits the balloon
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -19,8 +24,7 @@ public class Coin : MonoBehaviour
             audioSource.clip = coinSounds[Random.Range(0, coinSounds.Length - 1)];
             audioSource.pitch = 1 + Random.Range(-0.1f, 0.1f);
             if (audioSource.enabled) audioSource.Play();
-
-            if (audioSource.enabled) partSystem.Play();
+            partSystem.Play();
             GameObject.FindObjectOfType<Score>().AddCoin();
             GetComponent<CircleCollider2D>().enabled = false;
             StartCoroutine("DeathCounter");

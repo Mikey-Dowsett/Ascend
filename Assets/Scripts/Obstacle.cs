@@ -14,6 +14,8 @@ public class Obstacle : MonoBehaviour
     void Start()
     {
         GetComponent<SpriteRenderer>().color = GameObject.FindObjectOfType<IconManager>().color;
+        if(FindObjectOfType<Settings>().sound == false)
+            audioSource.enabled = false;
     }
 
     void OnCollisionEnter2D(Collision2D col)

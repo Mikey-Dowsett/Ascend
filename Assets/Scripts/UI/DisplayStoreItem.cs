@@ -40,7 +40,7 @@ public class DisplayStoreItem : MonoBehaviour
     int curStoreMenu;
     int price;
 
-    private void Start()
+    private void Awake()
     {
         BlipMenus(true);
         if (PlayerPrefs.HasKey(DEFAULTBALLOON))
@@ -53,11 +53,12 @@ public class DisplayStoreItem : MonoBehaviour
             defaultItems[3] = GameObject.Find(PlayerPrefs.GetString(DEFAULTOBSTACLE)).GetComponent<StoreItem>();
         if (PlayerPrefs.HasKey(DEFAULTTRAIL))
             defaultItems[4] = GameObject.Find(PlayerPrefs.GetString(DEFAULTTRAIL)).GetComponent<StoreItem>();
-        BlipMenus(false);
         foreach (StoreItem item in defaultItems)
         {
             item.ChangeFrame(0);
+            item.OnClick();
         }
+        BlipMenus(false);
 
         storeMenus[0].SetActive(true);
         oldStoreItem = storeItem = defaultItems[0];
@@ -92,29 +93,34 @@ public class DisplayStoreItem : MonoBehaviour
     public void SelectItem()
     {
         storeItem.ChangeFrame(0);
-        if (oldStoreItem) oldStoreItem.ChangeFrame(1);
+        if (oldStoreItem && oldStoreItem != storeItem) oldStoreItem.ChangeFrame(1);
         oldStoreItem = storeItem;
         switch (type)
         {
-            case "1": //Ballon
+            case "0": //Ballon
                 iconManager.SetBalloon(itemImage.sprite);
                 PlayerPrefs.SetString(DEFAULTBALLOON, title.text);
+                defaultItems[0] = storeItem;
                 break;
-            case "2": //Background
-                iconManager.SetBackground(itemImage.sprite);
-                PlayerPrefs.SetString(DEFAULTBACKGROUND, title.text);
-                break;
-            case "3": //Obstacle
-                iconManager.SetObstacle(itemImage.color);
-                PlayerPrefs.SetString(DEFAULTOBSTACLE, title.text);
-                break;
-            case "4": //Trail
-                iconManager.SetTrail(itemImage.material);
-                PlayerPrefs.SetString(DEFAULTTRAIL, title.text);
-                break;
-            case "5": //Defender
+            case "1": //Background
                 iconManager.SetDefender(itemImage.sprite);
                 PlayerPrefs.SetString(DEFAULTDEFENDER, title.text);
+                defaultItems[1] = storeItem;
+                break;
+            case "2": //Obstacle
+                iconManager.SetBackground(itemImage.sprite);
+                PlayerPrefs.SetString(DEFAULTBACKGROUND, title.text);
+                defaultItems[2] = storeItem;
+                break;
+            case "3": //Trail
+                iconManager.SetObstacle(itemImage.color);
+                PlayerPrefs.SetString(DEFAULTOBSTACLE, title.text);
+                defaultItems[3] = storeItem;
+                break;
+            case "4": //Defender
+                iconManager.SetTrail(itemImage.material);
+                PlayerPrefs.SetString(DEFAULTTRAIL, title.text);
+                defaultItems[4] = storeItem;
                 break;
         }
         PlayerPrefs.Save();
@@ -128,6 +134,7 @@ public class DisplayStoreItem : MonoBehaviour
             selectButton.interactable = true;
             unlockButton.interactable = false;
             audioSource.clip = goodBadAudio[0];
+            unlockCost.text = "Unlocked";
             if (audioSource.enabled) audioSource.Play();
         }
         else
@@ -154,7 +161,7 @@ public class DisplayStoreItem : MonoBehaviour
         storeMenus[menuNum].SetActive(true);
         storeButtons[menuNum].color = selectedButtonColor;
         defaultItems[menuNum].OnClick();
-        oldStoreItem = defaultItems[menuNum];
+        storeItem = oldStoreItem = defaultItems[menuNum];
     }
 
     private void BlipMenus(bool status)

@@ -19,7 +19,7 @@ public class Settings : MonoBehaviour
         haptic = true,
         notifications = true;
 
-    private void Start()
+    private void Awake()
     {
         if (PlayerPrefs.GetString("SOUND") == "False") ToggleSound();
         if (PlayerPrefs.GetString("MUSIC") == "False") ToggleMusic();
@@ -31,7 +31,7 @@ public class Settings : MonoBehaviour
     {
         sound = !sound;
         soundImg.sprite = sound ? soundON : soundOFF;
-        foreach (AudioSource audioS in GameObject.FindObjectsOfType<AudioSource>())
+        foreach (AudioSource audioS in Resources.FindObjectsOfTypeAll<AudioSource>())
         {
             if (audioS.CompareTag("Sound")) audioS.enabled = sound;
             if (audioS.CompareTag("Enemy")) audioS.enabled = sound;

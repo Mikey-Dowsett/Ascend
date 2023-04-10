@@ -44,4 +44,11 @@ public class Balloon : MonoBehaviour
             popParticle.Play();
         }
     }
+
+    public void Respawn()
+    {
+        GetComponent<CircleCollider2D>().enabled = true;
+        balloonSprite.color = new Color(255, 255, 255, 255);
+        FindObjectOfType<Player>().StartGame();
+    }
 }

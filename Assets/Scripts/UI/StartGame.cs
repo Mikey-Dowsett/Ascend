@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 /*
@@ -14,6 +15,10 @@ public class StartGame : MonoBehaviour
     [SerializeField] GameObject storeUI;
     [SerializeField] GameObject settingsUI;
     [SerializeField] GameObject deathUI;
+    [SerializeField] GameObject respawnButton;
+    [SerializeField] TMP_Text respawnText;
+
+    private bool hasRespawned;
 
     public void Update()
     {
@@ -53,6 +58,15 @@ public class StartGame : MonoBehaviour
     public void DeathScreen()
     {
         deathUI.SetActive(true);
+        if (hasRespawned) respawnButton.SetActive(false);
+    }
+
+    public void Respawn()
+    {
+        deathUI.SetActive(false);
+        respawnText.text = "Tap to Continue";
+        FindObjectOfType<Balloon>().Respawn();
+        hasRespawned = true;
     }
 
     public void ReloadScene()

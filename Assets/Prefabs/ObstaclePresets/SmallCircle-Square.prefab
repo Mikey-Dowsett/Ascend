@@ -46,6 +46,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5788420344377597365}
     m_Modifications:
+    - target: {fileID: 4001520382623203784, guid: a079136325e32704f873a3fd0074b5ae, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8995930964043223525, guid: a079136325e32704f873a3fd0074b5ae, type: 3}
       propertyPath: m_Name
       value: SmallCircleObstacle
@@ -108,6 +112,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5788420344377597365}
     m_Modifications:
+    - target: {fileID: 4001520382623203784, guid: a079136325e32704f873a3fd0074b5ae, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8995930964043223525, guid: a079136325e32704f873a3fd0074b5ae, type: 3}
       propertyPath: m_Name
       value: SmallCircleObstacle (8)
@@ -170,6 +178,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5788420344377597365}
     m_Modifications:
+    - target: {fileID: 4001520382623203784, guid: a079136325e32704f873a3fd0074b5ae, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8995930964043223525, guid: a079136325e32704f873a3fd0074b5ae, type: 3}
       propertyPath: m_Name
       value: SmallCircleObstacle (1)
@@ -232,6 +244,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5788420344377597365}
     m_Modifications:
+    - target: {fileID: 4001520382623203784, guid: a079136325e32704f873a3fd0074b5ae, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8995930964043223525, guid: a079136325e32704f873a3fd0074b5ae, type: 3}
       propertyPath: m_Name
       value: SmallCircleObstacle (2)
@@ -294,6 +310,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5788420344377597365}
     m_Modifications:
+    - target: {fileID: 4001520382623203784, guid: a079136325e32704f873a3fd0074b5ae, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8995930964043223525, guid: a079136325e32704f873a3fd0074b5ae, type: 3}
       propertyPath: m_Name
       value: SmallCircleObstacle (4)
@@ -356,6 +376,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5788420344377597365}
     m_Modifications:
+    - target: {fileID: 4001520382623203784, guid: a079136325e32704f873a3fd0074b5ae, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8995930964043223525, guid: a079136325e32704f873a3fd0074b5ae, type: 3}
       propertyPath: m_Name
       value: SmallCircleObstacle (6)
@@ -418,6 +442,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5788420344377597365}
     m_Modifications:
+    - target: {fileID: 4001520382623203784, guid: a079136325e32704f873a3fd0074b5ae, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8995930964043223525, guid: a079136325e32704f873a3fd0074b5ae, type: 3}
       propertyPath: m_Name
       value: SmallCircleObstacle (5)
@@ -480,6 +508,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5788420344377597365}
     m_Modifications:
+    - target: {fileID: 4001520382623203784, guid: a079136325e32704f873a3fd0074b5ae, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8995930964043223525, guid: a079136325e32704f873a3fd0074b5ae, type: 3}
       propertyPath: m_Name
       value: SmallCircleObstacle (7)

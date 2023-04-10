@@ -632,7 +632,7 @@ MonoBehaviour:
   unlocked: 0
   displayStoreItem: {fileID: 192157609}
   cost: 250
-  type: 1
+  type: 0
   color: {r: 1, g: 1, b: 1, a: 1}
   trailMat: {fileID: 0}
   lockedImage: {fileID: 1248925855}
@@ -973,9 +973,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemImage: {fileID: 21300000, guid: 2d689187b01fb1545936835bb031827e, type: 3}
   title: Rainbow Trail
-  unlocked: 1
+  unlocked: 0
   displayStoreItem: {fileID: 192157609}
-  cost: 50
+  cost: 100
   type: 4
   color: {r: 1, g: 1, b: 1, a: 1}
   trailMat: {fileID: 2100000, guid: da76470bab2926e439a114a2b8e2cecf, type: 2}
@@ -1201,7 +1201,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20, y: 200}
+  m_SizeDelta: {x: -100, y: 200}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &48779904
 MonoBehaviour:
@@ -1223,7 +1223,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tap To Continue
+  m_text: 'Or
+
+    Tap To Continue'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2117e1ec63fd66c459cf14013d078719, type: 2}
   m_sharedMaterial: {fileID: -6940198684489602266, guid: 2117e1ec63fd66c459cf14013d078719, type: 2}
@@ -1250,8 +1252,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65
-  m_fontSizeBase: 65
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1390,7 +1392,7 @@ GameObject:
   - component: {fileID: 49946842}
   - component: {fileID: 49946841}
   m_Layer: 5
-  m_Name: Null
+  m_Name: Holo-Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1430,8 +1432,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bcd7c6ddd5ce9a47a88a020cdabb4f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 21300000, guid: e3a04853c8e15bf44b0b7f200b4af5bd, type: 3}
-  title: Owl
+  itemImage: {fileID: 21300000, guid: 70a0d3cab39a8814e9827848903d8807, type: 3}
+  title: Holo-Shield
   unlocked: 0
   displayStoreItem: {fileID: 192157609}
   cost: 250
@@ -1481,7 +1483,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 49946843}
   m_OnClick:
     m_PersistentCalls:
@@ -1692,7 +1694,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 9
-  m_Sprite: {fileID: 21300000, guid: a1a78d1234360fa489c0146528acc1f9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38a255d9269b95c41b94c62f22df9321, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3673,7 +3675,7 @@ RectTransform:
   - {fileID: 510938460}
   - {fileID: 1059552529}
   m_Father: {fileID: 418582044}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -3694,10 +3696,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemImage: {fileID: 21300000, guid: 8e84417837ef5cf448ecdd9c075c9ce6, type: 3}
   title: Paddle
-  unlocked: 1
+  unlocked: 0
   displayStoreItem: {fileID: 192157609}
   cost: 250
-  type: 5
+  type: 1
   color: {r: 1, g: 1, b: 1, a: 1}
   trailMat: {fileID: 0}
   lockedImage: {fileID: 1059552528}
@@ -3869,7 +3871,7 @@ MonoBehaviour:
   unlocked: 1
   displayStoreItem: {fileID: 192157609}
   cost: 0
-  type: 5
+  type: 1
   color: {r: 1, g: 1, b: 1, a: 1}
   trailMat: {fileID: 0}
   lockedImage: {fileID: 243036284}
@@ -4151,7 +4153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &268802597
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4192,7 +4194,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0c7add48e2ad1c047a434ff1579e447d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8b989a274144ef14b8456adaea9a707d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4266,7 +4268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemImage: {fileID: 21300000, guid: a4ab964c50675174ba536769b1fcee6e, type: 3}
   title: Grey Trail
-  unlocked: 1
+  unlocked: 0
   displayStoreItem: {fileID: 192157609}
   cost: 50
   type: 4
@@ -4438,7 +4440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemImage: {fileID: 21300000, guid: a4ab964c50675174ba536769b1fcee6e, type: 3}
   title: Blue Trail
-  unlocked: 1
+  unlocked: 0
   displayStoreItem: {fileID: 192157609}
   cost: 50
   type: 4
@@ -4765,7 +4767,7 @@ MonoBehaviour:
   unlocked: 0
   displayStoreItem: {fileID: 192157609}
   cost: 250
-  type: 1
+  type: 0
   color: {r: 1, g: 1, b: 1, a: 1}
   trailMat: {fileID: 0}
   lockedImage: {fileID: 294678661}
@@ -5330,7 +5332,7 @@ MonoBehaviour:
   unlocked: 0
   displayStoreItem: {fileID: 192157609}
   cost: 250
-  type: 1
+  type: 0
   color: {r: 1, g: 1, b: 1, a: 1}
   trailMat: {fileID: 0}
   lockedImage: {fileID: 141591003}
@@ -5698,7 +5700,7 @@ RectTransform:
   - {fileID: 609179667}
   - {fileID: 537165568}
   m_Father: {fileID: 418582044}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -5719,10 +5721,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemImage: {fileID: 21300000, guid: 00e4728d9c6c7e74db41472b6394d857, type: 3}
   title: Brick
-  unlocked: 1
+  unlocked: 0
   displayStoreItem: {fileID: 192157609}
   cost: 250
-  type: 5
+  type: 1
   color: {r: 1, g: 1, b: 1, a: 1}
   trailMat: {fileID: 0}
   lockedImage: {fileID: 537165567}
@@ -5865,9 +5867,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 235067178}
-  - {fileID: 2027804494}
   - {fileID: 409851734}
   - {fileID: 210117974}
+  - {fileID: 2027804494}
   - {fileID: 1812468959}
   - {fileID: 49946840}
   - {fileID: 1724200384}
@@ -6054,7 +6056,7 @@ GameObject:
   - component: {fileID: 419539949}
   m_Layer: 5
   m_Name: Unlock
-  m_TagString: Untagged
+  m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7498,6 +7500,140 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526428704}
   m_CullTransparentMesh: 1
+--- !u!1 &527834332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 527834333}
+  - component: {fileID: 527834336}
+  - component: {fileID: 527834335}
+  - component: {fileID: 527834334}
+  m_Layer: 5
+  m_Name: Continue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &527834333
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527834332}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1560943652}
+  m_Father: {fileID: 1990469420}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 175}
+  m_SizeDelta: {x: 275, y: 50}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &527834334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527834332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 527834335}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1765417213}
+        m_TargetAssemblyTypeName: StartGame, Assembly-CSharp
+        m_MethodName: Respawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &527834335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527834332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.11372549, g: 0.49411765, b: 0.27058825, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &527834336
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527834332}
+  m_CullTransparentMesh: 1
 --- !u!1 &537165567
 GameObject:
   m_ObjectHideFlags: 0
@@ -7709,7 +7845,7 @@ MonoBehaviour:
   unlocked: 0
   displayStoreItem: {fileID: 192157609}
   cost: 250
-  type: 1
+  type: 0
   color: {r: 1, g: 1, b: 1, a: 1}
   trailMat: {fileID: 0}
   lockedImage: {fileID: 2836939}
@@ -11457,10 +11593,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemImage: {fileID: 21300000, guid: bc29443c0b4bf6f4d996e011216ed7b1, type: 3}
   title: Blue Balloon
-  unlocked: 1
+  unlocked: 0
   displayStoreItem: {fileID: 192157609}
   cost: 250
-  type: 1
+  type: 0
   color: {r: 1, g: 1, b: 1, a: 1}
   trailMat: {fileID: 0}
   lockedImage: {fileID: 524571155}
@@ -12153,7 +12289,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1041385868
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12194,7 +12330,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e3a04853c8e15bf44b0b7f200b4af5bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70a0d3cab39a8814e9827848903d8807, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12249,7 +12385,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 15, y: -15}
+  m_AnchoredPosition: {x: 15, y: -25}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1042566267
@@ -12340,7 +12476,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0cbeffd4bc03c48e0adeff185181a7aa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 07d6fa19c526ffd46b1890c4aff3c9e6, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12371,7 +12507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 3, y: -3}
+  m_EffectDistance: {x: 1.5, y: -1.5}
   m_UseGraphicAlpha: 1
 --- !u!1 &1059552528
 GameObject:
@@ -12505,7 +12641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemImage: {fileID: 21300000, guid: a4ab964c50675174ba536769b1fcee6e, type: 3}
   title: Green Trail
-  unlocked: 1
+  unlocked: 0
   displayStoreItem: {fileID: 192157609}
   cost: 50
   type: 4
@@ -12926,7 +13062,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1090143068
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12967,7 +13103,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cdefafdacf8da9540a5aadd867feb6a8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45314cfb78b6cc44381449e827d51a4c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13263,7 +13399,7 @@ MonoBehaviour:
   unlocked: 0
   displayStoreItem: {fileID: 192157609}
   cost: 250
-  type: 1
+  type: 0
   color: {r: 1, g: 1, b: 1, a: 1}
   trailMat: {fileID: 0}
   lockedImage: {fileID: 1674074180}
@@ -13432,7 +13568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemImage: {fileID: 21300000, guid: a4ab964c50675174ba536769b1fcee6e, type: 3}
   title: Red Trail
-  unlocked: 1
+  unlocked: 0
   displayStoreItem: {fileID: 192157609}
   cost: 50
   type: 4
@@ -14961,7 +15097,7 @@ MonoBehaviour:
   unlocked: 0
   displayStoreItem: {fileID: 192157609}
   cost: 250
-  type: 1
+  type: 0
   color: {r: 1, g: 1, b: 1, a: 1}
   trailMat: {fileID: 0}
   lockedImage: {fileID: 119530927}
@@ -15962,7 +16098,7 @@ MonoBehaviour:
   unlocked: 0
   displayStoreItem: {fileID: 192157609}
   cost: 250
-  type: 1
+  type: 0
   color: {r: 1, g: 1, b: 1, a: 1}
   trailMat: {fileID: 0}
   lockedImage: {fileID: 1248929912}
@@ -16215,7 +16351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemImage: {fileID: 21300000, guid: a4ab964c50675174ba536769b1fcee6e, type: 3}
   title: Yellow Trail
-  unlocked: 1
+  unlocked: 0
   displayStoreItem: {fileID: 192157609}
   cost: 50
   type: 4
@@ -16387,7 +16523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemImage: {fileID: 21300000, guid: a4ab964c50675174ba536769b1fcee6e, type: 3}
   title: Purple Trail
-  unlocked: 1
+  unlocked: 0
   displayStoreItem: {fileID: 192157609}
   cost: 50
   type: 4
@@ -16965,7 +17101,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -15, y: -15}
+  m_AnchoredPosition: {x: -15, y: -25}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1440487708
@@ -16981,7 +17117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 3, y: -3}
+  m_EffectDistance: {x: 1.5, y: -1.5}
   m_UseGraphicAlpha: 1
 --- !u!114 &1440487709
 MonoBehaviour:
@@ -17071,7 +17207,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 855878dc177fe4cbda4ce424779abc03, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa59c89e9cdaee747b90500a191bc101, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18564,6 +18700,141 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1559327541}
+  m_CullTransparentMesh: 1
+--- !u!1 &1560943651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1560943652}
+  - component: {fileID: 1560943654}
+  - component: {fileID: 1560943653}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1560943652
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560943651}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 527834333}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1560943653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560943651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Watch Ad to Continue
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 99aaeab4152d39749bf804395c51132b, type: 2}
+  m_sharedMaterial: {fileID: 640557497289962734, guid: 99aaeab4152d39749bf804395c51132b, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4279307791
+  m_fontColor: {r: 0.05882353, g: 0.05490196, b: 0.06666667, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1560943654
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560943651}
   m_CullTransparentMesh: 1
 --- !u!1 &1562411414
 GameObject:
@@ -20524,7 +20795,7 @@ GameObject:
   - component: {fileID: 1724200386}
   - component: {fileID: 1724200385}
   m_Layer: 5
-  m_Name: Null
+  m_Name: Spiked Mace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20564,8 +20835,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bcd7c6ddd5ce9a47a88a020cdabb4f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 21300000, guid: 0c7add48e2ad1c047a434ff1579e447d, type: 3}
-  title: Kite
+  itemImage: {fileID: 21300000, guid: 8b989a274144ef14b8456adaea9a707d, type: 3}
+  title: Spiked Mace
   unlocked: 0
   displayStoreItem: {fileID: 192157609}
   cost: 250
@@ -20615,7 +20886,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1724200387}
   m_OnClick:
     m_PersistentCalls:
@@ -21139,7 +21410,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 48.98979, y: -50}
+  m_AnchoredPosition: {x: 48.989746, y: -50}
   m_SizeDelta: {x: 97.97958, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1742914194
@@ -21442,6 +21713,8 @@ MonoBehaviour:
   storeUI: {fileID: 1071740172}
   settingsUI: {fileID: 1782119884}
   deathUI: {fileID: 1990469419}
+  respawnButton: {fileID: 527834332}
+  respawnText: {fileID: 48779904}
 --- !u!82 &1765417214
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22066,7 +22339,7 @@ MonoBehaviour:
   unlocked: 1
   displayStoreItem: {fileID: 192157609}
   cost: 0
-  type: 1
+  type: 0
   color: {r: 1, g: 1, b: 1, a: 1}
   trailMat: {fileID: 0}
   lockedImage: {fileID: 1975825979}
@@ -22087,7 +22360,7 @@ GameObject:
   - component: {fileID: 1812468961}
   - component: {fileID: 1812468960}
   m_Layer: 5
-  m_Name: Null
+  m_Name: Wood Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22127,8 +22400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bcd7c6ddd5ce9a47a88a020cdabb4f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 21300000, guid: cdefafdacf8da9540a5aadd867feb6a8, type: 3}
-  title: Bubble
+  itemImage: {fileID: 21300000, guid: 45314cfb78b6cc44381449e827d51a4c, type: 3}
+  title: Wood Shield
   unlocked: 0
   displayStoreItem: {fileID: 192157609}
   cost: 250
@@ -22178,7 +22451,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1812468962}
   m_OnClick:
     m_PersistentCalls:
@@ -23423,6 +23696,7 @@ RectTransform:
   m_Children:
   - {fileID: 48779903}
   - {fileID: 784653546}
+  - {fileID: 527834333}
   m_Father: {fileID: 1765417212}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23542,7 +23816,7 @@ RectTransform:
   - {fileID: 638358615}
   - {fileID: 628946305}
   m_Father: {fileID: 418582044}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -23563,10 +23837,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemImage: {fileID: 21300000, guid: a1a78d1234360fa489c0146528acc1f9, type: 3}
   title: Shield
-  unlocked: 1
+  unlocked: 0
   displayStoreItem: {fileID: 192157609}
   cost: 250
-  type: 5
+  type: 1
   color: {r: 1, g: 1, b: 1, a: 1}
   trailMat: {fileID: 0}
   lockedImage: {fileID: 628946304}
@@ -23934,6 +24208,8 @@ GameObject:
   - component: {fileID: 2085295137}
   - component: {fileID: 2085295139}
   - component: {fileID: 2085295140}
+  - component: {fileID: 2085295141}
+  - component: {fileID: 2085295142}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -24020,6 +24296,36 @@ MonoBehaviour:
   music: 1
   haptic: 1
   notifications: 1
+--- !u!114 &2085295141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085295136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d95d94c2a98c44bad7097d5bda37ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  androidGameId: 5205782
+  iOSGameId: 5206783
+  testMode: 1
+--- !u!114 &2085295142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085295136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4804b0c9a245ffe41b53455ad4d4bbda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showAdButton: {fileID: 527834334}
+  androidAdUnitId: Rewarded_Android
+  iOSAdUnitId: Rewarded_IOS
 --- !u!1 &2088816329
 GameObject:
   m_ObjectHideFlags: 0
@@ -24152,7 +24458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemImage: {fileID: 21300000, guid: a4ab964c50675174ba536769b1fcee6e, type: 3}
   title: Black Trail
-  unlocked: 1
+  unlocked: 0
   displayStoreItem: {fileID: 192157609}
   cost: 50
   type: 4
