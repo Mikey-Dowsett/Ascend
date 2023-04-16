@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 /*
 Controls the menus.
 */
@@ -23,7 +24,12 @@ public class StartGame : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetMouseButton(0) && !gameStarted)
+        GraphicRaycaster gr = GetComponent<GraphicRaycaster>();
+        List<RaycastResult> results = new List<RaycastResult>();
+        PointerEventData ped = new PointerEventData(null);
+        ped.position = Input.mousePosition;
+        gr.Raycast(ped, results);
+        if (Input.GetMouseButton(0) && !gameStarted && results.Count == 0)
         {
             BeginGame();
             gameStarted = true;
