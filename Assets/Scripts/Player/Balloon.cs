@@ -12,6 +12,8 @@ public class Balloon : MonoBehaviour
     [SerializeField] float bgSpeed;
     [SerializeField] ParticleSystem popParticle;
     [SerializeField] SpriteRenderer balloonSprite;
+    public GameObject balloonShield;
+
     Vector3 newBGPos;
 
     void Start()
@@ -50,5 +52,19 @@ public class Balloon : MonoBehaviour
         GetComponent<CircleCollider2D>().enabled = true;
         balloonSprite.color = new Color(255, 255, 255, 255);
         FindObjectOfType<Player>().StartGame();
+    }
+
+    public IEnumerator ActivateShield(){
+        balloonShield.SetActive(true);
+        yield return new WaitForSeconds(10);
+        for(int i = 0; i < 10; i++){
+            print(i);
+            balloonShield.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+            yield return new WaitForSeconds(0.25f - i / 5);
+            balloonShield.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+            yield return new WaitForSeconds(0.25f - i / 5);
+        }
+        balloonShield.SetActive(false);
+        StopCoroutine("ActivateShield");
     }
 }

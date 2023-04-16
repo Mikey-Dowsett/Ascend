@@ -9,7 +9,9 @@ public class ObstacleSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] presets;
     [SerializeField] GameObject coin;
+    [SerializeField] GameObject shield;
     [SerializeField] List<GameObject> oldPresets = new List<GameObject>();
+    [SerializeField] int coinChance;
 
     float oldSpawnHeight;
     float destroyHeight;
@@ -35,7 +37,14 @@ public class ObstacleSpawner : MonoBehaviour
         else if (oldSpawnHeight - transform.position.y <= -3f && !coinSpawned)
         {
             coinSpawned = true;
-            Instantiate(coin, transform.position, Quaternion.identity);
+            if(Random.Range(0, 100) < coinChance)
+                Instantiate(coin, transform.position, Quaternion.identity);
+            else {
+                if(FindObjectOfType<Balloon>().balloonShield.activeSelf)
+                    Instantiate(coin, transform.position, Quaternion.identity);
+                else
+                    Instantiate(shield, transform.position, Quaternion.identity);
+            }
         }
 
         //Destroys the oldest obstacle every 4 units

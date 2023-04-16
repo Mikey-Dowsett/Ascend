@@ -11,42 +11,48 @@ public class Obstacle : MonoBehaviour
     [SerializeField] GameObject whiteMask;
     [SerializeField] AudioSource audioSource;
 
-    void Start()
+    private void Start()
     {
         GetComponent<SpriteRenderer>().color = GameObject.FindObjectOfType<IconManager>().color;
         if(FindObjectOfType<Settings>().sound == false)
             audioSource.enabled = false;
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    private void Update(){
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
     {
         rb.gravityScale = 0.5f;
         if (col.collider.CompareTag("Player"))
         {
-            whiteMask.SetActive(true);
-            audioSource.pitch = 1 + Random.Range(-0.2f, 0.2f);
-            if (audioSource.enabled) audioSource.Play();
+            HitPlayer();
         }
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
         rb.gravityScale = 0.5f;
         if (col.CompareTag("Player"))
         {
-            whiteMask.SetActive(true);
-            audioSource.pitch = 1 + Random.Range(-0.2f, 0.2f);
-            if (audioSource.enabled) audioSource.Play();
+            HitPlayer();
         }
     }
 
-    void OnCollisionExit2D(Collision2D col)
+    private void OnCollisionExit2D(Collision2D col)
     {
         whiteMask.SetActive(false);
     }
 
-    void OnTriggerExit2D(Collider2D col)
+    private void OnTriggerExit2D(Collider2D col)
     {
         whiteMask.SetActive(false);
+    }
+
+    private void HitPlayer(){
+        whiteMask.SetActive(true);
+        audioSource.pitch = 1 + Random.Range(-0.2f, 0.2f);
+        if (audioSource.enabled) audioSource.Play();
     }
 }

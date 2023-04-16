@@ -19,12 +19,14 @@ public class StartGame : MonoBehaviour
     [SerializeField] TMP_Text respawnText;
 
     private bool hasRespawned;
+    private bool gameStarted;
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetMouseButton(0) && !gameStarted)
         {
-            PlayerPrefs.DeleteAll();
+            BeginGame();
+            gameStarted = true;
         }
     }
 
