@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] float balloonSpeed;
     [SerializeField] float balloonSpeedIncreaseAmount;
+    public float speedMultiplier = 1;
 
     bool start;
 
@@ -22,7 +23,7 @@ public class Player : MonoBehaviour
         if (start)
         {
             transform.position = cam.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0.75f, 10);
-            balloonPosition.position = new Vector3(0, balloonPosition.position.y + balloonSpeed * Time.deltaTime, 0);
+            balloonPosition.position = new Vector3(0, balloonPosition.position.y + balloonSpeed * Time.deltaTime * speedMultiplier, 0);
         }
 
         //Increases balloons rise speed.

@@ -12,7 +12,9 @@ public class Balloon : MonoBehaviour
     [SerializeField] float bgSpeed;
     [SerializeField] ParticleSystem popParticle;
     [SerializeField] SpriteRenderer balloonSprite;
+    [SerializeField] float speedMultiplier;
     public GameObject balloonShield;
+    public GameObject balloonSpeed;
 
     Vector3 newBGPos;
 
@@ -55,16 +57,35 @@ public class Balloon : MonoBehaviour
     }
 
     public IEnumerator ActivateShield(){
+        balloonSprite.enabled = false;
         balloonShield.SetActive(true);
         yield return new WaitForSeconds(10);
         for(int i = 0; i < 10; i++){
-            print(i);
-            balloonShield.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-            yield return new WaitForSeconds(0.25f - i / 5);
+            balloonShield.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.25f);
+            yield return new WaitForSeconds(0.25f - (i / 5));
             balloonShield.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-            yield return new WaitForSeconds(0.25f - i / 5);
+            yield return new WaitForSeconds(0.25f - (i / 5));
         }
         balloonShield.SetActive(false);
+        balloonSprite.enabled = true;
         StopCoroutine("ActivateShield");
+    }
+
+    public IEnumerator ActivateSpeed(){
+        balloonSprite.enabled = false;
+        balloonSpeed.SetActive(true);
+        FindObjectOfType<Player>().speedMultiplier = speedMultiplier;
+        yield return new WaitForSeconds(2.5f);
+        for(int i = 0; i < 10; i++){
+            balloonSpeed.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.25f);
+            yield return new WaitForSeconds(0.25f - (i / 5));
+            balloonSpeed.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+            yield return new WaitForSeconds(0.25f - (i / 5));
+            FindObjectOfType<Player>().speedMultiplier = speedMultiplier - (i / 10);
+        }
+        balloonSpeed.SetActive(false);
+        balloonSprite.enabled = true;
+        FindObjectOfType<Player>().speedMultiplier = 1;
+        StopCoroutine("ActivateSpeed");
     }
 }

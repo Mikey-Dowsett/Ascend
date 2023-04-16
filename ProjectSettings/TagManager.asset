@@ -11,6 +11,8 @@ TagManager:
   - FxTemporaire
   - Music
   - Shield
+  - Speed
+  - Destroy
   layers:
   - Default
   - TransparentFX

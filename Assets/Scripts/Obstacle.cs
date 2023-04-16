@@ -10,6 +10,7 @@ public class Obstacle : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] GameObject whiteMask;
     [SerializeField] AudioSource audioSource;
+    [SerializeField] ParticleSystem deathPart;
 
     private void Start()
     {
@@ -28,6 +29,8 @@ public class Obstacle : MonoBehaviour
         if (col.collider.CompareTag("Player"))
         {
             HitPlayer();
+        } else if(col.collider.CompareTag("Destroy")){
+            StartCoroutine("DeathCounter");
         }
     }
 
@@ -37,6 +40,8 @@ public class Obstacle : MonoBehaviour
         if (col.CompareTag("Player"))
         {
             HitPlayer();
+        } else if(col.CompareTag("Destroy")){
+            StartCoroutine("DeathCounter");
         }
     }
 
@@ -54,5 +59,21 @@ public class Obstacle : MonoBehaviour
         whiteMask.SetActive(true);
         audioSource.pitch = 1 + Random.Range(-0.2f, 0.2f);
         if (audioSource.enabled) audioSource.Play();
+    }
+
+    private IEnumerator DeathCounter()
+    {
+        rb.constraints = RigidbodyConstraints2D.FreezePosition;
+        GetComponent<BoxCollider2D>().enabled = false;
+
+        var main = deathPart.main;
+        main.startColor = GetComponent<SpriteRenderer>().color;
+        deathPart.Play();
+        
+        GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 0);
+        audioSource.pitch = 1 + Random.Range(-0.2f, 0.2f);
+        if (audioSource.enabled) audioSource.Play();
+        yield return new WaitForSeconds(1f);
+        GameObject.Destroy(gameObject);
     }
 }

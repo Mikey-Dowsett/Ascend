@@ -10,6 +10,7 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] GameObject[] presets;
     [SerializeField] GameObject coin;
     [SerializeField] GameObject shield;
+    [SerializeField] GameObject speed;
     [SerializeField] List<GameObject> oldPresets = new List<GameObject>();
     [SerializeField] int coinChance;
 
@@ -37,13 +38,19 @@ public class ObstacleSpawner : MonoBehaviour
         else if (oldSpawnHeight - transform.position.y <= -3f && !coinSpawned)
         {
             coinSpawned = true;
-            if(Random.Range(0, 100) < coinChance)
+            if(Random.Range(0, 100) < coinChance || 
+                FindObjectOfType<Balloon>().balloonShield.activeSelf || 
+                FindObjectOfType<Balloon>().balloonSpeed.activeSelf)
                 Instantiate(coin, transform.position, Quaternion.identity);
             else {
-                if(FindObjectOfType<Balloon>().balloonShield.activeSelf)
-                    Instantiate(coin, transform.position, Quaternion.identity);
-                else
-                    Instantiate(shield, transform.position, Quaternion.identity);
+                switch(Random.Range(0, 2)){
+                    case 0:
+                        Instantiate(shield, transform.position, Quaternion.identity);
+                        break;
+                    case 1:
+                        Instantiate(speed, transform.position, Quaternion.identity);
+                        break;
+                }
             }
         }
 
