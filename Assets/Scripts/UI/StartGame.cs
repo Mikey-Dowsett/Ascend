@@ -34,6 +34,10 @@ public class StartGame : MonoBehaviour
             BeginGame();
             gameStarted = true;
         }
+
+        if(Input.GetKeyDown(KeyCode.P)){
+            ScreenCapture.CaptureScreenshot($"C:/Users/mikey/OneDrive/Pictures/Screenshots/{System.DateTime.Now.ToString("MM-dd-yy (HH-mm-ss)")}.png");
+        }
     }
 
     public void BeginGame()
