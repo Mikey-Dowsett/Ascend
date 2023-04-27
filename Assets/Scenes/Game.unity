@@ -24820,9 +24820,10 @@ MonoBehaviour:
   coin: {fileID: 7893952955596227464, guid: b9619e259a97eb84f9c95ab27c054c39, type: 3}
   shield: {fileID: 1854706088737103067, guid: 9db41db0452dc464aa6f3a14c798aaf5, type: 3}
   speed: {fileID: 3160784130521726314, guid: e4c9e64a431cb6041af6c9a1666c3b29, type: 3}
+  size: {fileID: 8067839606939021120, guid: 341bf6707522e154488c485f53a5aaa3, type: 3}
   oldPresets:
   - {fileID: 80195232}
-  coinChance: 85
+  coinChance: 40
 --- !u!1 &2110313609
 GameObject:
   m_ObjectHideFlags: 0

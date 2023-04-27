@@ -41,4 +41,11 @@ public class Player : MonoBehaviour
         start = false;
         balloonSpeed = 0;
     }
+
+    public IEnumerator SizeUpgrade(){
+        transform.localScale = new Vector3(1.5f, 1.5f, 1);
+        yield return new WaitForSeconds(5f);
+        transform.localScale = new Vector3(0.75f, 0.75f, 1);
+        StopCoroutine("SizeUpgrade");
+    }
 }

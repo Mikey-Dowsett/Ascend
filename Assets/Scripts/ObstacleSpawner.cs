@@ -11,6 +11,7 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] GameObject coin;
     [SerializeField] GameObject shield;
     [SerializeField] GameObject speed;
+    [SerializeField] GameObject size;
     [SerializeField] List<GameObject> oldPresets = new List<GameObject>();
     [SerializeField] int coinChance;
 
@@ -43,12 +44,15 @@ public class ObstacleSpawner : MonoBehaviour
                 FindObjectOfType<Balloon>().balloonSpeed.activeSelf)
                 Instantiate(coin, transform.position, Quaternion.identity);
             else {
-                switch(Random.Range(0, 2)){
+                switch(Random.Range(0, 3)){
                     case 0:
                         Instantiate(shield, transform.position, Quaternion.identity);
                         break;
                     case 1:
                         Instantiate(speed, transform.position, Quaternion.identity);
+                        break;
+                    case 2:
+                        Instantiate(size, transform.position, Quaternion.identity);
                         break;
                 }
             }

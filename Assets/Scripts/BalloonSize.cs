@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BalloonShield : MonoBehaviour
+public class BalloonSize : MonoBehaviour
 {
     [SerializeField] AudioSource audioSource;
     [SerializeField] ParticleSystem partSystem;
     [SerializeField] SpriteRenderer sr;
 
-    [SerializeField] AudioClip[] shieldSounds;
+    [SerializeField] AudioClip[] sizeSounds;
 
     void Start(){
         if(FindObjectOfType<Settings>().sound == false)
@@ -21,13 +21,13 @@ public class BalloonShield : MonoBehaviour
         if (col.CompareTag("Balloon"))
         {
             //Plays random coin sound
-            audioSource.clip = shieldSounds[Random.Range(0, shieldSounds.Length - 1)];
+            audioSource.clip = sizeSounds[Random.Range(0, sizeSounds.Length - 1)];
             audioSource.pitch = 1 + Random.Range(-0.1f, 0.1f);
             if (audioSource.enabled) audioSource.Play();
             partSystem.Play();
             GameObject.FindObjectOfType<Score>().AddCoin();
             GetComponent<CircleCollider2D>().enabled = false;
-            FindObjectOfType<Balloon>().StartCoroutine("ActivateShield");
+            FindObjectOfType<Player>().StartCoroutine("SizeUpgrade");
             StartCoroutine("DeathCounter");
         }
     }
