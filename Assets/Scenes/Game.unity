@@ -24501,7 +24501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   androidGameId: 5205782
   iOSGameId: 5206783
-  testMode: 1
+  testMode: 0
 --- !u!114 &2085295142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24823,7 +24823,7 @@ MonoBehaviour:
   size: {fileID: 8067839606939021120, guid: 341bf6707522e154488c485f53a5aaa3, type: 3}
   oldPresets:
   - {fileID: 80195232}
-  coinChance: 40
+  coinChance: 90
 --- !u!1 &2110313609
 GameObject:
   m_ObjectHideFlags: 0

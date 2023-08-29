@@ -18,7 +18,7 @@ public class BalloonSize : MonoBehaviour
     //Checks for when the coin hits the balloon
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Balloon"))
+        if (col.CompareTag("Balloon") || col.CompareTag("Player"))
         {
             //Plays random coin sound
             audioSource.clip = sizeSounds[Random.Range(0, sizeSounds.Length - 1)];
@@ -30,10 +30,6 @@ public class BalloonSize : MonoBehaviour
             FindObjectOfType<Player>().StartCoroutine("SizeUpgrade");
             StartCoroutine("DeathCounter");
         }
-    }
-
-    void OnColliderEnter2d(Collision2D col){
-        GetComponent<Rigidbody2D>().gravityScale = 0.5f;
     }
 
     //Makes the coin invisable and destorys it after 1 second.
